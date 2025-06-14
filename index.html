@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AgriSon Solar Solutions</title>
-  <meta name="description" content="AgriSon Solar Borehole Solutions - Reliable and solar-powered water systems for agriculture and homes." />
+  <meta name="description" content="AgriSon Solar Borehole Solutions - Reliable solar-powered systems for farms and homes." />
   <meta name="theme-color" content="#2c3e50" />
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
@@ -20,9 +20,9 @@
 
     body {
       font-family: 'Inter', sans-serif;
+      margin: 0;
       background: var(--light-bg);
       color: var(--light-text);
-      margin: 0;
       transition: background 0.3s, color 0.3s;
     }
 
@@ -41,14 +41,9 @@
       z-index: 100;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
+    header img {
+      width: 150px;
+      margin-bottom: 1rem;
     }
 
     .toggle-btn {
@@ -71,44 +66,52 @@
       background: white;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease;
     }
 
     body.dark section {
       background: #2a2a2a;
     }
 
-    section:hover {
+    h2 {
+      text-align: center;
+      color: #00695C;
+      margin-bottom: 1.5rem;
+    }
+
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 20px;
+    }
+
+    .service {
+      flex: 1 1 280px;
+      background: #fff;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    body.dark .service {
+      background: #333;
+    }
+
+    .service:hover {
       transform: translateY(-5px);
     }
 
-    section h2 {
-      color: #00695C;
-      margin-bottom: 1rem;
+    .service img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 6px;
     }
 
-    section p, li {
-      margin: 0.5rem 0;
-    }
-
-    ul {
-      padding-left: 1.2rem;
-    }
-
-    .button {
-      display: inline-block;
-      background: var(--accent);
-      color: white;
-      padding: 0.7rem 1.5rem;
+    .service h3 {
       margin-top: 1rem;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s ease;
-    }
-
-    .button:hover {
-      background: #00796B;
     }
 
     footer {
@@ -116,15 +119,12 @@
       color: white;
       text-align: center;
       padding: 2rem 1rem;
+      margin-top: 2rem;
     }
 
     footer a {
       color: #80CBC4;
       text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
     }
 
     .whatsapp-float {
@@ -145,42 +145,45 @@
     }
 
     @media screen and (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
+      .services {
+        flex-direction: column;
+        align-items: center;
       }
-      section {
-        margin: 1rem;
+
+      header h1 {
+        font-size: 1.8rem;
       }
     }
   </style>
 </head>
 <body>
+
   <header>
+    <button class="toggle-btn" onclick="toggleDark()">🌓 Theme</button>
+    <img src="3_logo/image.jpg" alt="AgriSon Logo">
     <h1>AgriSon Solar Solutions</h1>
     <p>Sun-Powered Water, Farm-Ready Solutions</p>
-    <button class="toggle-btn" onclick="toggleDark()">🌓 Theme</button>
   </header>
 
   <section>
-    <h2>About Us</h2>
-    <p>We specialize in solar-powered borehole pump systems for farms, rural homes, and agricultural use. Our mission is to deliver <strong>sustainable</strong>, <strong>low-maintenance</strong> solutions using clean energy.</p>
-  </section>
-
-  <section>
     <h2>Our Services</h2>
-    <ul>
-      <li><strong>✔ Borehole Pump Installation</strong> – Eco-friendly, long-lasting pumps</li>
-      <li><strong>✔ Water Storage Solutions</strong> – Customized tanks for your property</li>
-      <li><strong>✔ Solar Security Lighting</strong> – Keep your systems safe and illuminated</li>
-    </ul>
-    <a href="mailto:AgriSon@zohomail.com" class="button">Get in Touch</a>
-  </section>
-
-  <section>
-    <h2>Why Choose AgriSon?</h2>
-    <p>✅ Operates even in harsh climates</p>
-    <p>✅ Zero electricity costs – pure solar power</p>
-    <p>✅ Fully installed & maintained by professionals</p>
+    <div class="services">
+      <div class="service">
+        <img src="4_solar_borehole_pump/image.jpg" alt="Solar Borehole Pump">
+        <h3>Solar Borehole Pump</h3>
+        <p>Eco-friendly water pumping for agricultural and home needs.</p>
+      </div>
+      <div class="service">
+        <img src="2_water_tank_solution/image.jpg" alt="Water Tank Solution">
+        <h3>Water Storage Solutions</h3>
+        <p>Durable tanks tailored to your property requirements.</p>
+      </div>
+      <div class="service">
+        <img src="1_solar_security_lights/image.jpg" alt="Solar Security Light">
+        <h3>Solar Security Lighting</h3>
+        <p>Reliable lighting to secure your premises with solar power.</p>
+      </div>
+    </div>
   </section>
 
   <footer>
@@ -203,12 +206,11 @@
     }
 
     if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('service-worker.js').then(() => {
-          console.log('Service Worker registered ✅');
-        }).catch(console.error);
-      });
+      navigator.serviceWorker.register('service-worker.js').then(() => {
+        console.log('Service Worker registered ✅');
+      }).catch(console.error);
     }
   </script>
+
 </body>
 </html>
