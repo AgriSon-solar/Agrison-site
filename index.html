@@ -9,9 +9,11 @@
   <style>
     :root {
       --primary: #00796B;
-      --dark: #004D40;
-      --bg: #f8f9fa;
-      --text: #222;
+      --accent-yellow: #FFD54F;
+      --accent-blue: #4FC3F7;
+      --accent-brown: #795548;
+      --bg: #fffdf9;
+      --text: #2e2b29;
       --bg-dark: #121212;
       --text-dark: #f1f1f1;
     }
@@ -31,7 +33,7 @@
     }
 
     header {
-      background: linear-gradient(135deg, var(--primary), var(--dark));
+      background: linear-gradient(135deg, var(--accent-yellow), var(--primary));
       color: white;
       text-align: center;
       padding: 2rem 1rem;
@@ -67,7 +69,7 @@
 
     .info-box {
       background: white;
-      border-left: 4px solid var(--primary);
+      border-left: 6px solid var(--accent-blue);
       padding: 1rem;
       margin-bottom: 1rem;
       border-radius: 6px;
@@ -76,7 +78,7 @@
 
     body.dark .info-box {
       background: #1e1e1e;
-      border-left: 4px solid #80cbc4;
+      border-left: 6px solid #80cbc4;
     }
 
     iframe {
@@ -88,7 +90,7 @@
     }
 
     footer {
-      background: var(--dark);
+      background: var(--accent-brown);
       color: white;
       text-align: center;
       padding: 1.5rem;
@@ -96,7 +98,7 @@
     }
 
     a {
-      color: #00ffc8;
+      color: #ffe680;
       text-decoration: none;
     }
 
@@ -120,7 +122,7 @@
       justify-content: center;
       width: 50px;
       height: 50px;
-      background: #25D366;
+      background: var(--accent-blue);
       color: white;
       border-radius: 50%;
       font-size: 24px;
@@ -130,7 +132,8 @@
     }
 
     .floating-buttons a.call {
-      background: #007AFF;
+      background: var(--accent-yellow);
+      color: #333;
     }
 
     .floating-buttons a:hover {
