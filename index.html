@@ -2,123 +2,124 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AgriSon Solar Solutions</title>
+  <meta name="description" content="AgriSon Solar Borehole Solutions - Reliable and solar-powered water systems for agriculture and homes." />
+  <meta name="theme-color" content="#2c3e50" />
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    :root {
+      --light-bg: #f9f9f9;
+      --dark-bg: #1e1e1e;
+      --light-text: #222;
+      --dark-text: #f9f9f9;
+      --accent: #009688;
     }
 
     body {
       font-family: 'Inter', sans-serif;
-      background: #f9f9f9;
-      color: #2c3e50;
-      scroll-behavior: smooth;
+      background: var(--light-bg);
+      color: var(--light-text);
+      margin: 0;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body.dark {
+      background: var(--dark-bg);
+      color: var(--dark-text);
     }
 
     header {
-      background: linear-gradient(135deg, #2c3e50, #34495e);
+      background: linear-gradient(135deg, #00796B, #004D40);
       color: white;
-      padding: 30px 20px;
+      padding: 2rem;
       text-align: center;
       position: sticky;
       top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-
-    header img {
-      width: 140px;
-      animation: fadeInDown 1s ease-out;
+      z-index: 100;
     }
 
     header h1 {
-      margin-top: 10px;
-      font-size: 2rem;
+      margin: 0;
+      font-size: 2.5rem;
     }
 
     header p {
-      font-size: 1.1rem;
-      opacity: 0.85;
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .toggle-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 6px 12px;
+      font-size: 14px;
+      background: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
     }
 
     section {
-      padding: 60px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    h2 {
-      font-size: 2rem;
-      text-align: center;
-      margin-bottom: 30px;
-      position: relative;
-    }
-
-    .services {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 25px;
-    }
-
-    .service {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 1.5rem;
       background: white;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      width: 300px;
-      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
       transition: transform 0.3s ease;
-      cursor: pointer;
-      opacity: 0;
-      transform: translateY(20px);
     }
 
-    .service.reveal {
-      opacity: 1;
-      transform: translateY(0);
-      transition: all 0.6s ease-in-out;
+    body.dark section {
+      background: #2a2a2a;
     }
 
-    .service img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
+    section:hover {
+      transform: translateY(-5px);
     }
 
-    .service h3 {
-      padding: 15px 15px 0;
-      font-size: 1.2rem;
+    section h2 {
+      color: #00695C;
+      margin-bottom: 1rem;
     }
 
-    .service p {
-      padding: 10px 15px 20px;
-      font-size: 0.95rem;
-      color: #555;
+    section p, li {
+      margin: 0.5rem 0;
     }
 
-    iframe {
-      width: 100%;
-      height: 600px;
-      border: none;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      margin-top: 30px;
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 0.7rem 1.5rem;
+      margin-top: 1rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .button:hover {
+      background: #00796B;
     }
 
     footer {
-      background: #2c3e50;
+      background: #00332e;
       color: white;
       text-align: center;
-      padding: 30px 20px;
-      font-size: 14px;
+      padding: 2rem 1rem;
     }
 
     footer a {
-      color: #1abc9c;
+      color: #80CBC4;
       text-decoration: none;
     }
 
@@ -126,181 +127,88 @@
       text-decoration: underline;
     }
 
-    /* Modal */
-    .modal {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.5);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 999;
-    }
-
-    .modal-content {
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      max-width: 500px;
-      width: 90%;
-      text-align: center;
-      position: relative;
-      animation: fadeIn 0.4s ease-out;
-    }
-
-    .modal h3 {
-      margin-bottom: 10px;
-    }
-
-    .modal p {
-      color: #444;
-    }
-
-    .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: 22px;
-      cursor: pointer;
-    }
-
-    /* WhatsApp Button */
     .whatsapp-float {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background-color: #25D366;
-      color: white;
-      border-radius: 50%;
       width: 60px;
       height: 60px;
-      text-align: center;
+      background: #25D366;
+      color: white;
       font-size: 30px;
+      border-radius: 50%;
+      text-align: center;
       line-height: 60px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
       z-index: 1000;
-      transition: transform 0.3s ease;
+      text-decoration: none;
     }
 
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-    }
-
-    @keyframes fadeInDown {
-      0% {opacity: 0; transform: translateY(-20px);}
-      100% {opacity: 1; transform: translateY(0);}
-    }
-
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-
-    @media (max-width: 768px) {
-      .service {
-        width: 100%;
-      }
-
-      h2 {
-        font-size: 1.6rem;
-      }
-
+    @media screen and (max-width: 600px) {
       header h1 {
-        font-size: 1.6rem;
+        font-size: 2rem;
+      }
+      section {
+        margin: 1rem;
       }
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>AgriSon Solar Solutions</h1>
+    <p>Sun-Powered Water, Farm-Ready Solutions</p>
+    <button class="toggle-btn" onclick="toggleDark()">🌓 Theme</button>
+  </header>
 
-<header>
-  <img src="https://agrison.netlify.app/logo.png" alt="AgriSon Logo" />
-  <h1>AgriSon Solar Borehole Solutions</h1>
-  <p>Reliable | Efficient | Sustainable</p>
-</header>
+  <section>
+    <h2>About Us</h2>
+    <p>We specialize in solar-powered borehole pump systems for farms, rural homes, and agricultural use. Our mission is to deliver <strong>sustainable</strong>, <strong>low-maintenance</strong> solutions using clean energy.</p>
+  </section>
 
-<section>
-  <h2>Our Services</h2>
-  <div class="services">
-    <div class="service" data-title="Solar Pump Installation" data-detail="This system allows farms to utilize solar energy to pump water, saving costs and ensuring sustainable irrigation.">
-      <img src="https://agrison.netlify.app/solar-pump.jpg" alt="Solar Pump Installation" />
-      <h3>Solar Pump Installation</h3>
-      <p>Harness the power of the sun to pump water efficiently for farms and homes.</p>
-    </div>
-    <div class="service" data-title="Water Storage Solutions" data-detail="Our storage solutions include top-quality tanks, ensuring clean and ample water supply all year round.">
-      <img src="https://agrison.netlify.app/water-storage.jpg" alt="Water Storage Solutions" />
-      <h3>Water Storage Solutions</h3>
-      <p>High-quality water tanks installed and connected to solar boreholes.</p>
-    </div>
-    <div class="service" data-title="Solar Security Lighting" data-detail="Secure your property with energy-efficient solar lighting systems that operate without grid dependency.">
-      <img src="https://agrison.netlify.app/solar-lights.jpg" alt="Solar Security Lighting" />
-      <h3>Solar Security Lighting</h3>
-      <p>Light up your property with sustainable solar-powered security systems.</p>
-    </div>
-  </div>
-</section>
+  <section>
+    <h2>Our Services</h2>
+    <ul>
+      <li><strong>✔ Borehole Pump Installation</strong> – Eco-friendly, long-lasting pumps</li>
+      <li><strong>✔ Water Storage Solutions</strong> – Customized tanks for your property</li>
+      <li><strong>✔ Solar Security Lighting</strong> – Keep your systems safe and illuminated</li>
+    </ul>
+    <a href="mailto:AgriSon@zohomail.com" class="button">Get in Touch</a>
+  </section>
 
-<section>
-  <h2>Request a Free Site Inspection</h2>
-  <iframe src="https://forms.zohopublic.com/agrisonzoho1/form/clientinformationform/formperma/gl90ghu1dgNkdiMmSsqGY-FjW7xuMtcCqmGd36Mi-cg"></iframe>
-</section>
+  <section>
+    <h2>Why Choose AgriSon?</h2>
+    <p>✅ Operates even in harsh climates</p>
+    <p>✅ Zero electricity costs – pure solar power</p>
+    <p>✅ Fully installed & maintained by professionals</p>
+  </section>
 
-<footer>
-  <p>📍 Gauteng | Limpopo | Mpumalanga | North West | Free State</p>
-  <p>📞 <a href="https://wa.me/27621221998">+27 62 122 1998</a> | 📧 <a href="mailto:AgriSon@zohomail.com">AgriSon@zohomail.com</a></p>
-  <p>🔗 <a href="https://www.facebook.com/profile.php?id=61577414725364">Facebook Page</a></p>
-  <p>&copy; 2025 AgriSon Solar Solutions. All rights reserved.</p>
-</footer>
+  <footer>
+    <p>📞 <a href="https://wa.me/27621221998">+27 62 122 1998</a></p>
+    <p>📧 <a href="mailto:AgriSon@zohomail.com">AgriSon@zohomail.com</a></p>
+    <p>🔗 <a href="https://facebook.com/">Visit our Facebook Page</a></p>
+    <p>&copy; 2025 AgriSon Solar Solutions</p>
+  </footer>
 
-<!-- WhatsApp Floating Button -->
-<a href="https://wa.me/27621221998" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">💬</a>
+  <a href="https://wa.me/27621221998" class="whatsapp-float" title="Chat on WhatsApp">💬</a>
 
-<!-- Modal -->
-<div class="modal" id="modal">
-  <div class="modal-content">
-    <span class="close-btn" id="modalClose">&times;</span>
-    <h3 id="modalTitle"></h3>
-    <p id="modalDetail"></p>
-  </div>
-</div>
-
-<script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('reveal');
-      }
-    });
-  }, {
-    threshold: 0.1
-  });
-
-  document.querySelectorAll('.service').forEach(service => observer.observe(service));
-
-  const modal = document.getElementById('modal');
-  const modalTitle = document.getElementById('modalTitle');
-  const modalDetail = document.getElementById('modalDetail');
-  const modalClose = document.getElementById('modalClose');
-
-  document.querySelectorAll('.service').forEach(service => {
-    service.addEventListener('click', () => {
-      modalTitle.innerText = service.getAttribute('data-title');
-      modalDetail.innerText = service.getAttribute('data-detail');
-      modal.style.display = 'flex';
-    });
-  });
-
-  modalClose.addEventListener('click', () => {
-    modal.style.display = 'none';
-  });
-
-  window.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.style.display = 'none';
+  <script>
+    function toggleDark() {
+      document.body.classList.toggle('dark');
+      localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
     }
-  });
-</script>
 
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark');
+    }
+
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js').then(() => {
+          console.log('Service Worker registered ✅');
+        }).catch(console.error);
+      });
+    }
+  </script>
 </body>
 </html>
