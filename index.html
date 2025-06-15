@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AgriSon Solar Solutions</title>
-  <meta name="description" content="AgriSon installs solar pump and storage systems across South Africa. Clean. Reliable. Sustainable."/>
+  <title>AgriSon Solar Borehole Solutions</title>
+  <meta name="description" content="Locally trusted solar water systems in South Africa. AgriSon delivers small-town support with clean energy expertise."/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <style>
     :root {
       --green: #2e7d32;
-      --light-green: #c8e6c9;
+      --light-green: #a5d6a7;
       --accent-blue: #4fc3f7;
       --bg: #f9f9f9;
       --text: #333;
@@ -24,18 +24,19 @@
       background: var(--bg);
       color: var(--text);
       font-size: 18px;
-      transition: background .3s, color .3s;
       line-height: 1.6;
+      transition: background .3s, color .3s;
     }
     body.dark {
       background: var(--bg-dark);
       color: var(--text-dark);
     }
+
     .topbar {
       background: var(--green);
       color: white;
-      padding: 0.5rem 1rem;
       text-align: center;
+      padding: 0.6rem;
       font-size: 0.95rem;
       position: sticky;
       top: 0;
@@ -43,13 +44,13 @@
     }
     .topbar a {
       color: #c8e6c9;
-      margin: 0 0.75rem;
       text-decoration: none;
+      margin: 0 0.75rem;
     }
 
     header {
       background: url('https://agrison.netlify.app/images/solar-hero.jpg') center/cover no-repeat;
-      height: 80vh;
+      height: 70vh;
       position: relative;
       display: flex;
       align-items: center;
@@ -58,38 +59,38 @@
       text-shadow: 0 2px 8px rgba(0,0,0,0.5);
     }
     header .overlay {
-      position: absolute; inset: 0;
+      position: absolute;
+      inset: 0;
       background: rgba(0,0,0,0.4);
     }
     header content {
-      position: relative; text-align: center; z-index: 1;
+      position: relative;
+      z-index: 1;
+      text-align: center;
     }
     header h1 {
-      font-size: 4rem;
+      font-size: 3rem;
       margin: 0;
-    }
-    header p {
-      font-size: 1.5rem;
-      margin: 1rem 0;
     }
     .hero-benefits {
       list-style: none;
       padding: 0;
-      margin-top: 1rem;
-      font-size: 1.1rem;
+      margin: 1rem 0;
     }
-    .hero-benefits li { margin: 0.5rem 0; }
+    .hero-benefits li {
+      margin: 0.5rem 0;
+      font-size: 1rem;
+    }
 
     .btn {
       background: var(--green);
       color: white;
-      padding: 1rem 2rem;
-      border: none;
+      padding: 0.8rem 1.5rem;
       border-radius: 30px;
-      font-size: 1.2rem;
-      cursor: pointer;
-      transition: background .3s;
       text-decoration: none;
+      font-size: 1rem;
+      margin-top: 1rem;
+      display: inline-block;
     }
 
     .theme-toggle {
@@ -108,97 +109,97 @@
     }
 
     main {
-      padding: 5rem 2rem;
-      max-width: 1200px;
+      padding: 3rem 1rem;
+      max-width: 1100px;
       margin: auto;
     }
 
     h2 {
       text-align: center;
-      font-size: 2.5rem;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
+      font-size: 2rem;
     }
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 3rem;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     }
 
     .card {
       background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,.05);
-      padding: 2.5rem 2rem;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
       text-align: center;
     }
     .card .icon {
-      font-size: 3rem;
+      font-size: 2.5rem;
       color: var(--accent-blue);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    body.dark .card {
+      background: #1e1e1e;
+      color: #f1f1f1;
+    }
+    body.dark .card .icon {
+      color: var(--light-green);
     }
 
     .stats {
+      background: #e8f5e9;
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 3rem 0;
       display: flex;
       justify-content: space-around;
       flex-wrap: wrap;
       gap: 2rem;
-      padding: 3rem 1rem;
-      margin: 4rem auto;
-      background: #e8f5e9;
-      border-radius: 12px;
     }
 
     .pie-card {
-      flex: 1 1 250px;
+      flex: 1 1 200px;
       text-align: center;
     }
 
     .pie {
-      --size: 140px;
+      --size: 120px;
       --value: 0;
       width: var(--size);
       height: var(--size);
       border-radius: 50%;
-      margin: 0 auto 1rem;
       background: conic-gradient(var(--green) calc(var(--value) * 1%), #c8e6c9 0);
       display: flex;
       align-items: center;
       justify-content: center;
+      margin: auto;
       font-weight: bold;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       color: var(--green);
       position: relative;
     }
-
     .pie::after {
       content: attr(data-label);
       position: absolute;
-      font-size: 1.2rem;
-      color: var(--green);
     }
 
     .testimonials {
-      padding: 4rem 1rem;
       background: #f1f8e9;
+      padding: 3rem 1rem;
       text-align: center;
-    }
-
-    .testimonial-slider {
-      max-width: 700px;
-      margin: auto;
     }
 
     .testimonial-slider blockquote {
       font-style: italic;
+      max-width: 700px;
+      margin: auto;
       animation: fadeIn 6s infinite;
     }
-
     .testimonial-slider cite {
       display: block;
-      font-style: normal;
-      color: var(--green);
       margin-top: 1rem;
+      color: var(--green);
     }
 
     @keyframes fadeIn {
@@ -206,40 +207,35 @@
       20%, 80% { opacity: 1; }
     }
 
-    .trust-badges {
-      padding: 3rem 1rem;
-      text-align: center;
+    iframe {
+      width: 100%;
+      height: 75vh;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
     }
 
-    .badges {
+    .impact-cards {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 2rem;
+      margin: 2rem 0;
     }
-
-    .badges img {
-      height: 60px;
-      filter: grayscale(1);
-      transition: filter 0.3s;
+    .impact-card {
+      flex: 1 1 300px;
+      text-align: center;
     }
-
-    .badges img:hover {
-      filter: grayscale(0);
-    }
-
-    iframe {
-      width: 100%;
-      height: 70vh;
-      border: none;
-      border-radius: 12px;
-      box-shadow: 0 4px 16px rgba(0,0,0,.1);
+    .impact-card img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
     }
 
     footer {
       background: var(--green);
       color: white;
-      padding: 3rem 2rem;
+      padding: 2rem;
       text-align: center;
     }
 
@@ -251,23 +247,22 @@
 </head>
 <body>
   <div class="topbar">
-    📞 <a href="tel:+27621221998">Call Now: +27 62 122 1998</a>
-    📧 <a href="mailto:AgriSon@zohomail.com">Email Us</a>
+    📞 <a href="tel:+27621221998">+27 62 122 1998</a> |
+    📧 <a href="mailto:AgriSon@zohomail.com">AgriSon@zohomail.com</a>
   </div>
-
-  <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌓</button>
+  <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
 
   <header>
     <div class="overlay"></div>
     <content>
       <h1>AgriSon Solar Solutions</h1>
-      <p>Clean Energy Pump & Storage Systems</p>
+      <p>Locally trusted, solar-powered borehole & tank installations</p>
       <ul class="hero-benefits">
-        <li>🌞 100% Solar-Powered Solutions</li>
-        <li>💧 Off-Grid Water Independence</li>
-        <li>🔋 Eco-Efficient Energy Systems</li>
+        <li>✅ Small-Town Service • Big Results</li>
+        <li>💧 Save water and money, every day</li>
+        <li>🔋 Quiet, clean, reliable solar energy</li>
       </ul>
-      <a href="#services" class="btn">Explore Services</a>
+      <a href="#services" class="btn">Our Services</a>
     </content>
   </header>
 
@@ -275,48 +270,52 @@
     <section id="services">
       <h2>Our Services</h2>
       <div class="cards">
-        <div class="card"><div class="icon">🔋</div><h3>Solar Pump Installations</h3><p>Efficient systems for farms, homes & communities.</p></div>
-        <div class="card"><div class="icon">💧</div><h3>Tank & Storage</h3><p>Custom water storage & pressurized supply setups.</p></div>
-        <div class="card"><div class="icon">⚙</div><h3>Upgrades & Support</h3><p>System expansions, battery add-ons, and repairs.</p></div>
+        <div class="card"><div class="icon">🔋</div><h3>Solar Pump Installations</h3><p>Solar kits for existing boreholes, quiet and off-grid.</p></div>
+        <div class="card"><div class="icon">💧</div><h3>Tanks & Filtration</h3><p>Storage & water treatment setups for small farms & homes.</p></div>
+        <div class="card"><div class="icon">🔧</div><h3>Upgrades & Maintenance</h3><p>Battery add-ons, solar panels, flow control fixes.</p></div>
       </div>
     </section>
 
     <section class="stats">
-      <div class="pie-card" data-percent="85"><div class="pie" style="--value:0;" data-label="0%"></div><h3>Liters Pumped</h3><p>2M+ Delivered</p></div>
-      <div class="pie-card" data-percent="68"><div class="pie" style="--value:0;" data-label="0%"></div><h3>Energy Saved</h3><p>750kWh Reduced</p></div>
-      <div class="pie-card" data-percent="95"><div class="pie" style="--value:0;" data-label="0%"></div><h3>Installations</h3><p>120+ Sites</p></div>
+      <div class="pie-card" data-percent="40"><div class="pie" data-label="0%"></div><h3>Liters Pumped</h3><p>40,000+</p></div>
+      <div class="pie-card" data-percent="30"><div class="pie" data-label="0%"></div><h3>kWh Saved</h3><p>30+</p></div>
+      <div class="pie-card" data-percent="20"><div class="pie" data-label="0%"></div><h3>Installations</h3><p>12 sites</p></div>
     </section>
 
     <section class="testimonials">
       <h2>What Our Clients Say</h2>
       <div class="testimonial-slider">
-        <blockquote>“Our farm runs 100% on solar thanks to AgriSon.”<cite>– Pieter</cite></blockquote>
-        <blockquote>“Saved us on diesel costs & headaches!”<cite>– Lerato</cite></blockquote>
-        <blockquote>“Professional team & solid gear.”<cite>– Thabo</cite></blockquote>
+        <blockquote>"Reliable and honest — just what we needed on our plot."<cite>– Sipho, North West</cite></blockquote>
+        <blockquote>"AgriSon made switching to solar simple and stress-free!"<cite>– Melissa, Limpopo</cite></blockquote>
       </div>
     </section>
 
-    <section class="trust-badges">
-      <h2>Trusted by the Best</h2>
-      <div class="badges">
-        <img src="https://via.placeholder.com/120x60?text=SAPVIA" alt="SAPVIA Certified" />
-        <img src="https://via.placeholder.com/120x60?text=GreenCape" alt="GreenCape" />
-        <img src="https://via.placeholder.com/120x60?text=ISO+9001" alt="ISO 9001" />
-        <img src="https://via.placeholder.com/120x60?text=SESSA" alt="SESSA Member" />
+    <section class="impact">
+      <h2>Why Go Solar?</h2>
+      <div class="impact-cards">
+        <div class="impact-card">
+          <img src="https://tse1.mm.bing.net/th?id=OIP.YXgGLgu5ZY4HTl-1w0rEqAHaF2&pid=Api" alt="Solar pump benefit graph" />
+          <h3>Quiet, Clean Operation</h3>
+          <p>Solar boreholes reduce emissions & noise, perfect for remote setups.</p>
+        </div>
+        <div class="impact-card">
+          <img src="https://tse1.mm.bing.net/th?id=OIP.4AduiJoRtd0a-A9g6eqU9wHaHa&pid=Api" alt="Cost comparison chart" />
+          <h3>Long-Term Savings</h3>
+          <p>Solar systems cost more upfront, but you save for decades.</p>
+        </div>
       </div>
     </section>
 
-    <section style="text-align:center;">
-      <h2>Free Site Evaluation</h2>
-      <p>Get a personalized quote—no commitment.</p>
-      <iframe src="https://form.jotform.com/251645628248060" loading="lazy" title="Contact Form"></iframe>
+    <section>
+      <h2>Request a Site Evaluation</h2>
+      <p>Tell us your setup and we’ll do the rest.</p>
+      <iframe src="https://form.jotform.com/251645628248060" loading="lazy"></iframe>
     </section>
   </main>
 
   <footer>
-    <p>📍 Gauteng • Limpopo • Mpumalanga • North West • Free State</p>
-    <p>📞 <a href="tel:+27621221998">+27 62 122 1998</a> | 📧 <a href="mailto:AgriSon@zohomail.com">AgriSon@zohomail.com</a></p>
-    <p>&copy; 2025 AgriSon Solar Solutions</p>
+    📍 Based in South Africa • Serving Local Communities<br/>
+    &copy; 2025 AgriSon Solar Borehole Solutions
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
