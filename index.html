@@ -16,6 +16,7 @@
       --text: #2e2b29;
       --bg-dark: #121212;
       --text-dark: #f1f1f1;
+      --card-dark: #1e1e1e;
     }
 
     body {
@@ -74,11 +75,13 @@
       margin-bottom: 1rem;
       border-radius: 6px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      color: var(--text);
     }
 
     body.dark .info-box {
-      background: #1e1e1e;
+      background: var(--card-dark);
       border-left: 6px solid #80cbc4;
+      color: var(--text-dark);
     }
 
     iframe {
@@ -139,6 +142,30 @@
     .floating-buttons a:hover {
       opacity: 0.85;
     }
+
+    .why-solar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .why-card {
+      background: white;
+      padding: 1rem;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .why-card h3 {
+      margin-top: 0;
+      color: var(--primary);
+    }
+
+    body.dark .why-card {
+      background: var(--card-dark);
+      color: var(--text-dark);
+    }
   </style>
 </head>
 <body>
@@ -160,10 +187,6 @@
     <section>
       <h2>Our Services</h2>
       <div class="info-box">
-        <strong>✔ Borehole Drilling & Solar Pumps</strong><br/>
-        Fully installed solar pump systems with panels and water controllers.
-      </div>
-      <div class="info-box">
         <strong>✔ Tank & Storage Solutions</strong><br/>
         We install custom tanks and filtration for farms and homes.
       </div>
@@ -177,17 +200,36 @@
       <h2>Harnessing the Power of the Sun for Sustainable Water Access</h2>
       <div class="info-box">
         <p>
-          Solar borehole pumps offer a reliable, cost-effective, and eco-friendly solution for accessing groundwater, especially in off-grid or rural agricultural areas. By utilizing solar energy, these systems operate without the need for electricity or fuel, drastically reducing operating costs and ensuring functionality even during power outages or load shedding.
+          Solar borehole pumps offer a reliable, cost-effective, and eco-friendly solution for accessing groundwater, especially in off-grid or rural agricultural areas.
         </p>
         <p>
-          This makes them ideal for farms, homesteads, and small communities seeking water independence. Integrating a customized water storage solution ensures that surplus water is safely stored for use during cloudy days or high-demand periods, offering consistent water availability.
+          These systems operate without the need for electricity or fuel, reducing operating costs and ensuring functionality even during power outages or load shedding.
         </p>
         <p>
-          To further enhance performance, a pressure pump can be added—this enables strong, steady water flow throughout the system, ideal for irrigation, livestock, or household use.
+          Combine them with tanks and pressure pumps for high-demand or low-light days.
         </p>
-        <p>
-          Together, these components create a low-maintenance, high-efficiency water system that increases property value and provides peace of mind for years to come.
-        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Why Choose Solar?</h2>
+      <div class="why-solar">
+        <div class="why-card">
+          <h3>💸 Save Money</h3>
+          <p>No diesel or electricity bills—solar pays itself off quickly.</p>
+        </div>
+        <div class="why-card">
+          <h3>🌍 Eco-Friendly</h3>
+          <p>Zero emissions. Silent operation. Good for the land and air.</p>
+        </div>
+        <div class="why-card">
+          <h3>⚡ Grid Independence</h3>
+          <p>Run water day or night—even during loadshedding or failures.</p>
+        </div>
+        <div class="why-card">
+          <h3>💧 Consistent Pressure</h3>
+          <p>Combined with tanks and pressure pumps for smooth flow.</p>
+        </div>
       </div>
     </section>
 
