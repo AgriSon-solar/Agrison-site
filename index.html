@@ -146,17 +146,38 @@
       color: var(--light-green);
     }
 
-    .expanded-services {
-      background: #f1f8e9;
-      border-radius: 12px;
-      padding: 2rem;
+    .agrison-sales {
+      background: #f0fdf4;
+      padding: 3rem 1.5rem;
+      border-radius: 10px;
       margin: 3rem 0;
     }
-    .expanded-services ul {
-      list-style: disc;
-      padding-left: 1.5rem;
-      max-width: 900px;
-      margin: auto;
+    .agrison-sales h2 {
+      text-align: center;
+      color: var(--green);
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+    .agrison-sales h3 {
+      margin-top: 2rem;
+      color: var(--green);
+    }
+    .agrison-sales ul {
+      list-style: none;
+      padding-left: 1rem;
+    }
+    .agrison-sales li {
+      margin: 0.5rem 0;
+    }
+    .agrison-sales blockquote {
+      border-left: 4px solid var(--green);
+      padding-left: 1rem;
+      margin: 1rem 0;
+      font-style: italic;
+      color: var(--text);
+    }
+    body.dark .agrison-sales {
+      background: #1e2e1e;
     }
 
     .testimonials {
@@ -182,14 +203,6 @@
       20%, 80% { opacity: 1; }
     }
 
-    iframe {
-      width: 100%;
-      height: 85vh;
-      border: none;
-      border-radius: 10px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-    }
-
     .impact-cards {
       display: flex;
       flex-wrap: wrap;
@@ -205,6 +218,14 @@
       max-width: 100%;
       height: auto;
       border-radius: 8px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 85vh;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
     }
 
     footer {
@@ -233,7 +254,7 @@
       <h1>AgriSon Solar Solutions</h1>
       <p>Locally trusted, solar-powered borehole & tank installations</p>
       <ul class="hero-benefits">
-        <li>✅ Small-Town Service • Big Results</li>
+        <li>✅ Small‑Town Service • Big Results</li>
         <li>💧 Save water and money, every day</li>
         <li>🔋 Quiet, clean, reliable solar energy</li>
       </ul>
@@ -245,22 +266,53 @@
     <section id="services">
       <h2>Our Services</h2>
       <div class="cards">
-        <div class="card"><div class="icon">🔋</div><h3>Solar Pump Installations</h3><p>Solar kits for existing boreholes, quiet and off-grid.</p></div>
-        <div class="card"><div class="icon">💧</div><h3>Tanks & Filtration</h3><p>Storage & water treatment setups for small farms & homes.</p></div>
-        <div class="card"><div class="icon">🔧</div><h3>Upgrades & Maintenance</h3><p>Battery add-ons, solar panels, flow control fixes.</p></div>
+        <div class="card">
+          <div class="icon">🔋</div>
+          <h3>Solar Pump Installations</h3>
+          <p>Solar kits for existing boreholes, quiet and off‑grid.</p>
+        </div>
+        <div class="card">
+          <div class="icon">💧</div>
+          <h3>Tanks & Filtration</h3>
+          <p>Storage & water‑treatment setups for small farms & homes.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🔧</div>
+          <h3>Upgrades & Maintenance</h3>
+          <p>Battery add‑ons, solar panels, flow‑control fixes.</p>
+        </div>
       </div>
     </section>
 
-    <section class="expanded-services">
-      <h2>How Our Services Help You</h2>
-      <ul>
-        <li>Get water pumping in remote areas without electricity.</li>
-        <li>Reduce your diesel and generator costs with solar pumps.</li>
-        <li>Store clean water safely with tank and filter solutions.</li>
-        <li>Upgrade existing boreholes to work better and use less energy.</li>
-        <li>Enjoy quiet, efficient water systems that just work — no daily hassle.</li>
-        <li>Built to handle African conditions and unpredictable weather.</li>
-      </ul>
+    <section class="agrison-sales">
+      <h2>Why Choose AgriSon?</h2>
+      <div class="problem">
+        <h3>🔻 The Problem</h3>
+        <p>You live it every day: no power, no water. Fuel prices climb, buckets fill, hope fades even with water underground.</p>
+        <p><em>You didn’t fail. The system failed you.</em></p>
+      </div>
+      <div class="solution">
+        <h3>✅ Our Hybrid Solar AC/DC Systems</h3>
+        <p>Solar by day, grid by night — no more Eskom, no more empty tanks.</p>
+        <blockquote>“Our systems are hybrid‑powered — sun by day, grid by night or on cloudy days.”</blockquote>
+        <ul>
+          <li>☀ Free solar during daylight</li>
+          <li>⚡ Reliable grid backup</li>
+          <li>💧 Strong pressure everywhere</li>
+          <li>🛠 Local installation by trusted team</li>
+        </ul>
+        <p><em>You’ll never have to say, “The water’s off again” — not with AgriSon.</em></p>
+      </div>
+      <div class="savings">
+        <h3>💸 Financial Sense</h3>
+        <p>Avoid paying R500–R800/month in diesel or municipal water charges.</p>
+        <p><strong>One-time setup = day-and-night water freedom.</strong></p>
+      </div>
+      <div class="local">
+        <h3>🙌 Built for Our People</h3>
+        <p>We're rooted in small towns, not investors’ portfolios.</p>
+        <blockquote>“God gave us the sun and the rain. At AgriSon, we help you use both — wisely.”</blockquote>
+      </div>
     </section>
 
     <section class="testimonials">
@@ -277,12 +329,12 @@
         <div class="impact-card">
           <img src="https://tse1.mm.bing.net/th?id=OIP.YXgGLgu5ZY4HTl-1w0rEqAHaF2&pid=Api" alt="Solar pump benefit graph" />
           <h3>Quiet, Clean Operation</h3>
-          <p>Solar boreholes reduce emissions & noise, perfect for remote setups.</p>
+          <p>Solar boreholes reduce emissions & noise—ideal for remote setups.</p>
         </div>
         <div class="impact-card">
           <img src="https://tse1.mm.bing.net/th?id=OIP.4AduiJoRtd0a-A9g6eqU9wHaHa&pid=Api" alt="Cost comparison chart" />
-          <h3>Long-Term Savings</h3>
-          <p>Solar systems cost more upfront, but you save for decades.</p>
+          <h3>Long‑Term Savings</h3>
+          <p>Solar systems cost more upfront, but pay off in the long run.</p>
         </div>
       </div>
     </section>
@@ -290,8 +342,23 @@
     <section>
       <h2>Request a Site Evaluation</h2>
       <p>Tell us your setup and we’ll do the rest.</p>
-      <iframe src="https://form.jotform.com/251645628248060" loading="lazy"></iframe>
+      <iframe
+        title="AgriSon Site Evaluation Form"
+        id="JotFormIFrame"
+        src="https://form.jotform.com/251645628248060"
+        frameborder="0"
+        style="width:100%; min-height:1000px; border:none;"
+        scrolling="no"
+      ></iframe>
+      <script>
+        window.addEventListener("message", function(e){
+          if(e.origin.includes("jotform") && e.data.type === "setHeight"){
+            document.getElementById("JotFormIFrame").style.height = e.data.height + "px";
+          }
+        });
+      </script>
     </section>
+
   </main>
 
   <footer>
