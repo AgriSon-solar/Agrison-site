@@ -3,224 +3,180 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AgriSon Solar Borehole Solutions</title>
-  <meta name="description" content="AgriSon installs solar borehole systems and tanks across South Africa. Reliable. Sustainable. Efficient."/>
-  <meta property="og:title" content="AgriSon Solar Borehole Solutions"/>
-  <meta property="og:description" content="Efficient solar borehole and tank installations across South Africa."/>
+  <title>AgriSon Solar Solutions</title>
+  <meta name="description" content="AgriSon installs solar pump and storage systems across South Africa. Clean. Reliable. Sustainable."/>
+  <meta property="og:title" content="AgriSon Solar Solutions"/>
+  <meta property="og:description" content="Clean energy solar pump and water storage solutions across South Africa."/>
   <meta property="og:image" content="https://agrison.netlify.app/images/og-image.jpg"/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://agrison.netlify.app"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #00796B;
-      --accent-yellow: #FFD54F;
-      --accent-blue: #4FC3F7;
-      --accent-brown: #795548;
-      --bg: #fffdf9;
-      --text: #2e2b29;
+      --green: #2e7d32;
+      --light-green: #c8e6c9;
+      --accent-blue: #4fc3f7;
+      --bg: #f9f9f9;
+      --text: #333;
       --bg-dark: #121212;
-      --text-dark: #f1f1f1;
+      --text-dark: #eee;
     }
-
+    *, *::before, *::after { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
-      transition: background 0.3s, color 0.3s;
+      transition: background .3s, color .3s;
     }
-
     body.dark {
       background: var(--bg-dark);
       color: var(--text-dark);
     }
-
     header {
-      background: linear-gradient(135deg, var(--accent-yellow), var(--primary));
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
+      background: url('https://agrison.netlify.app/images/solar-hero.jpg') center/cover no-repeat;
+      height: 60vh;
       position: relative;
-    }
-
-    h1, h2 {
-      margin: 0 0 1rem;
-    }
-
-    .theme-toggle {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: #333;
-      color: #fff;
-      border: none;
-      padding: 6px 12px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 14px;
-    }
-
-    main {
-      max-width: 900px;
-      margin: auto;
-      padding: 2rem 1rem;
-    }
-
-    section {
-      margin-bottom: 2rem;
-    }
-
-    .info-box {
-      background: white;
-      border-left: 6px solid var(--accent-blue);
-      padding: 1rem;
-      margin-bottom: 1rem;
-      border-radius: 6px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-
-    body.dark .info-box {
-      background: #1e1e1e;
-      border-left: 6px solid #80cbc4;
-    }
-
-    iframe {
-      width: 100%;
-      height: 80vh;
-      max-height: 1000px;
-      border: none;
-      border-radius: 8px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-    }
-
-    footer {
-      background: var(--accent-brown);
-      color: white;
-      text-align: center;
-      padding: 1.5rem;
-      font-size: 0.9rem;
-    }
-
-    a {
-      color: #ffe680;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .floating-buttons {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 1000;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .floating-buttons a {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 50px;
-      height: 50px;
-      background: var(--accent-blue);
       color: white;
-      border-radius: 50%;
-      font-size: 24px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+    header .overlay {
+      position: absolute; inset: 0;
+      background: rgba(0,0,0,0.4);
+    }
+    header content {
+      position: relative; text-align: center; z-index: 1;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin: .5rem 0;
+    }
+    .btn {
+      background: var(--green);
+      color: white;
+      padding: .75rem 1.5rem;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background .3s;
       text-decoration: none;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-      transition: background 0.3s;
+      display: inline-block;
     }
-
-    .floating-buttons a.call {
-      background: var(--accent-yellow);
-      color: #333;
+    .btn:hover { background: #1b5e20; }
+    .theme-toggle {
+      position: fixed; top: 20px;
+      right: 20px;
+      background: var(--green);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px; height: 40px;
+      font-size: 18px;
+      cursor: pointer;
+      z-index: 100;
     }
-
-    .floating-buttons a:hover {
-      opacity: 0.85;
+    main { padding: 4rem 1rem; max-width: 1000px; margin: auto; }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
     }
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.05);
+      padding: 2rem 1rem;
+      text-align: center;
+      transition: transform .3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card .icon {
+      font-size: 2.5rem;
+      color: var(--accent-blue);
+      margin-bottom: 1rem;
+    }
+    iframe {
+      width: 100%;
+      height: 70vh;
+      max-height: 800px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,.1);
+    }
+    footer {
+      background: var(--green);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    footer a { color: #c8e6c9; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
   </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (localStorage.theme === 'dark') document.body.classList.add('dark');
+    });
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+      localStorage.theme = document.body.classList.contains('dark') ? 'dark' : '';
+    }
+  </script>
 </head>
 <body>
+  <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌓</button>
 
   <header>
-    <button type="button" class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌓 Theme</button>
-    <h1>AgriSon Solar Borehole Solutions</h1>
-    <p>Efficient • Reliable • Sustainable</p>
+    <div class="overlay"></div>
+    <content>
+      <h1>AgriSon Solar Solutions</h1>
+      <p>Clean Energy Pump & Storage Systems</p>
+      <a href="#services" class="btn">Our Services</a>
+    </content>
   </header>
 
   <main>
-    <section>
-      <h2>Welcome</h2>
-      <div class="info-box">
-        AgriSon provides professional solar-powered borehole and water storage systems tailored for agriculture, homes, and community use. We operate across South Africa, offering cost-effective, eco-friendly water solutions.
+    <section id="services">
+      <h2 style="text-align:center; margin-bottom:2rem;">Our Services</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="icon">🔋</div>
+          <h3>Solar Pump Installations</h3>
+          <p>High‑efficiency solar pump and panel systems for existing boreholes and wells.</p>
+        </div>
+        <div class="card">
+          <div class="icon">💧</div>
+          <h3>Tank & Storage Solutions</h3>
+          <p>Custom tanks, filtration & distribution systems—gravity or pressurized.</p>
+        </div>
+        <div class="card">
+          <div class="icon">⚙</div>
+          <h3>Maintenance & Upgrades</h3>
+          <p>System servicing—battery additions, flow optimization and efficiency tuning.</p>
+        </div>
       </div>
     </section>
 
-    <section>
-      <h2>Our Services</h2>
-      <div class="info-box">
-        <strong>✔ Borehole Drilling & Solar Pumps</strong><br/>
-        Fully installed solar pump systems with panels and water controllers.
-      </div>
-      <div class="info-box">
-        <strong>✔ Tank & Storage Solutions</strong><br/>
-        We install custom tanks and filtration for farms and homes.
-      </div>
-      <div class="info-box">
-        <strong>✔ Maintenance & Upgrades</strong><br/>
-        Need more water flow or new batteries? We upgrade too!
-      </div>
-    </section>
-
-    <section>
-      <h2>Harnessing the Power of the Sun for Sustainable Water Access</h2>
-      <div class="info-box">
-        <p>Solar borehole pumps offer a reliable, cost-effective, and eco-friendly solution for accessing groundwater, especially in off-grid or rural agricultural areas...</p>
-        <p>To further enhance performance, a pressure pump can be added—this enables strong, steady water flow throughout the system, ideal for irrigation, livestock, or household use.</p>
-        <p>Together, these components create a low-maintenance, high-efficiency water system that increases property value and provides peace of mind for years to come.</p>
-      </div>
-    </section>
-
-    <section>
-      <h2>Request a Site Evaluation</h2>
-      <p>Please fill in the form below and our team will contact you for a free site inspection and quote:</p>
+    <section style="margin-top:4rem; text-align:center;">
+      <h2>Free Site Evaluation</h2>
+      <p>Get a personalized quote—no commitment.</p>
       <iframe src="https://form.jotform.com/251645628248060" loading="lazy" title="Contact Form"></iframe>
     </section>
   </main>
 
   <footer>
-    📍 Gauteng • Limpopo • Mpumalanga • North West • Free State<br/>
-    📞 <a href="https://wa.me/27621221998">+27 62 122 1998</a> |
-    📧 <a href="mailto:AgriSon@zohomail.com">AgriSon@zohomail.com</a><br/>
-    🔗 <a href="https://facebook.com/">Facebook Page</a> |
-    &copy; 2025 AgriSon Solar Solutions
+    <p>📍 Serving Gauteng • Limpopo • Mpumalanga • North West • Free State</p>
+    <p>📞 <a href="tel:+27621221998">+27 62 122 1998</a> | 📧 <a href="mailto:AgriSon@zohomail.com">AgriSon@zohomail.com</a></p>
   </footer>
-
-  <div class="floating-buttons">
-    <a href="tel:+27621221998" class="call" title="Call Us">📞</a>
-    <a href="https://wa.me/27621221998" target="_blank" title="Chat on WhatsApp">💬</a>
-  </div>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      if (localStorage.getItem('theme') === 'dark') {
-        document.body.classList.add('dark');
-      }
-    });
-
-    function toggleTheme() {
-      const body = document.body;
-      body.classList.toggle('dark');
-      localStorage.setItem('theme', body.classList.contains('dark') ? 'dark' : 'light');
-    }
-  </script>
-
 </body>
 </html>
