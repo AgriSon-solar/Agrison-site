@@ -41,6 +41,17 @@
       position: relative;
     }
 
+    header img {
+      max-height: 80px;
+      margin-bottom: 0.5rem;
+    }
+
+    header p.moto {
+      margin: 0.25rem 0 1rem;
+      font-style: italic;
+      font-size: 0.95rem;
+    }
+
     h1, h2 {
       margin: 0 0 1rem;
     }
@@ -98,6 +109,10 @@
       text-align: center;
       padding: 1.5rem;
       font-size: 0.9rem;
+    }
+
+    footer img {
+      max-height: 60px;
     }
 
     a {
@@ -171,6 +186,8 @@
 <body>
 
   <header>
+    <img src="logo.png" alt="AgriSon Logo" />
+    <p class="moto">Philippians 4:13 – For I can do everything through Christ, who gives me strength.</p>
     <button class="theme-toggle" onclick="toggleTheme()">🌓 Theme</button>
     <h1>AgriSon Solar Borehole Solutions</h1>
     <p>Efficient • Reliable • Sustainable</p>
@@ -241,11 +258,16 @@
   </main>
 
   <footer>
-    📍 Gauteng • Limpopo • Mpumalanga • North West • Free State<br/>
-    📞 <a href="https://wa.me/27621221998">+27 62 122 1998</a> |
-    📧 <a href="mailto:AgriSon@zohomail.com">AgriSon@zohomail.com</a><br/>
-    🔗 <a href="https://facebook.com/">Facebook Page</a> |
-    &copy; 2025 AgriSon Solar Solutions
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+      <div>
+        📍 Gauteng • Limpopo • Mpumalanga • North West • Free State<br/>
+        📞 <a href="https://wa.me/27621221998">+27 62 122 1998</a> |
+        📧 <a href="mailto:AgriSon@zohomail.com">AgriSon@zohomail.com</a><br/>
+        🔗 <a href="https://facebook.com/">Facebook Page</a><br/>
+        &copy; 2025 AgriSon Solar Solutions
+      </div>
+      <img src="logo.png" alt="AgriSon Logo" />
+    </div>
   </footer>
 
   <div class="floating-buttons">
@@ -256,9 +278,8 @@
   <script>
     function toggleTheme() {
       document.body.classList.toggle('dark');
-      localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+      localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : '');
     }
-
     if (localStorage.getItem('theme') === 'dark') {
       document.body.classList.add('dark');
     }
