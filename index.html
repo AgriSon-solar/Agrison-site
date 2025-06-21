@@ -1,241 +1,309 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AgriSon Solar Borehole Solutions</title>
-  <meta name="description" content="AgriSon installs solar borehole systems, tanks & lighting—serving South African homes & farms.">
-  
-  <!-- Open Graph & Facebook -->
-  <meta property="og:title" content="AgriSon Solar Borehole Solutions">
-  <meta property="og:description" content="Professional solar pumps, tanks, lighting installations.">
-  <meta property="og:image" content="https://agrison.netlify.app/logo.png.jpg">
-  <meta property="og:url" content="https://agrison.netlify.app/">
-  <meta property="og:type" content="business.business">
-  <meta property="business:contact_data:email" content="AgriSon@zohomail.com">
-  <meta name="twitter:card" content="summary_large_image">
-  
-  <!-- JSON-LD structured data -->
-  <script type="application/ld+json">
-  {
-    "@context": "http://schema.org",
-    "@type": "LocalBusiness",
-    "name": "AgriSon Solar Borehole Solutions",
-    "image": "https://agrison.netlify.app/logo.png.jpg",
-    "telephone": "+27621221998",
-    "email": "AgriSon@zohomail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Gauteng",
-      "addressRegion": "South Africa"
-    },
-    "description": "Specialists in solar borehole pumps, storage tanks, and lighting installations.",
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-      "opens": "08:00",
-      "closes": "18:00"
-    }
-  }
-  </script>
-
-  <!-- Font + Styles -->
+  <meta name="description" content="AgriSon installs solar borehole systems and tanks across South Africa. Reliable. Sustainable. Efficient."/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    /* Core Setup */
-    *, *:before, *:after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0; font-family: 'Inter', sans-serif;
-      background: #fffdf9; color: #2e2b29;
-      overflow-x: hidden;
-    }
-    h1,h2,h3 { margin: 0 0 .5rem; }
-    p { margin: 0 0 1rem; }
-    a { color: #00796B; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    :root {
+      --primary: #00796B;
+      --accent-yellow: #FFD54F;
+      --accent-blue: #4FC3F7;
+      --accent-brown: #795548;
+      --bg: #fffdf9;
+      --text: #2e2b29;
+      --bg-dark: #121212;
+      --text-dark: #f1f1f1;
+      --card-dark: #1e1e1e;
+    }body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
+  position: relative;
+  overflow-x: hidden;
+}
 
-    /* Parallax background header */
-    header {
-      position: relative; height: 60vh; overflow: hidden;
-      background: url('https://images.unsplash.com/photo-1607860101968-342f5d67b3b2?auto=format&fit=crop&w=1950&q=80') center/cover fixed no-repeat;
-      color: #fff;
-      display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
-    }
-    header::after {
-      content: ''; position: absolute; inset: 0;
-      background: rgba(0,0,0,0.3);
-    }
-    header h1, header p {
-      position: relative; /* above overlay */
-    }
-    header h1 {
-      font-size: 2.5rem; margin-bottom: .5rem;
-    }
-    header p.moto {
-      font-style: italic; font-size: 1.1rem;
-    }
-    .theme-toggle {
-      position: fixed; top: 20px; right: 20px;
-      background: #333; color: #fff; border: none;
-      border-radius: 5px; padding: 6px 12px; cursor: pointer;
-      z-index: 1000;
-    }
+.sun-rays {
+  position: fixed;
+  top: -150px;
+  left: -150px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255,255,224,0.4) 0%, transparent 80%);
+  animation: rotateRays 25s linear infinite;
+  z-index: -2;
+  pointer-events: none;
+}
+@keyframes rotateRays {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
-    /* Main content */
-    main { max-width: 960px; margin: auto; padding: 2rem 1rem; }
-    .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 1.5rem; }
-    .service-card {
-      background: #fff; border-radius: 8px; padding: 1.5rem;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      transition: transform .3s, box-shadow .3s;
-    }
-    .service-card:hover { transform: translateY(-5px); box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
-    .service-card img { width: 100%; height: auto; border-radius: 4px; margin-bottom: 1rem; }
+.ripple-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: radial-gradient(circle at 50% 50%, rgba(173,216,230,0.1), transparent 70%);
+  animation: rippleEffect 8s ease-in-out infinite alternate;
+  z-index: -1;
+  pointer-events: none;
+}
+@keyframes rippleEffect {
+  0% { transform: scale(1); opacity: 0.2; }
+  100% { transform: scale(1.1); opacity: 0.3; }
+}
 
-    /* FAQ Accordion */
-    .faq-item { margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 6px; overflow: hidden; }
-    .faq-question { background: #00796B; color: #fff; padding: .75rem; cursor: pointer; }
-    .faq-answer { max-height: 0; overflow: hidden; transition: max-height .3s ease; background: #fdfdfb; padding: 0 .75rem; }
-    .faq-item.open .faq-answer { max-height: 10rem; padding: .75rem; }
+body.dark {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
 
-    /* Modal */
-    .modal-bg {
-      position: fixed; inset: 0; background: rgba(0,0,0,0.5);
-      display: none; justify-content: center; align-items: center; z-index: 1000;
-    }
-    .modal {
-      background: #fff; border-radius: 8px; padding: 2rem;
-      max-width: 400px; width: 90%; text-align: center; position: relative;
-    }
-    .modal-close {
-      position: absolute; top: 10px; right: 10px; border: none;
-      background: none; font-size: 1.2rem; cursor: pointer;
-    }
+header {
+  background: linear-gradient(135deg, var(--accent-yellow), var(--primary));
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  position: relative;
+}
 
-    /* Contact Banks & Footer */
-    .btn-primary {
-      display: inline-block; background: #00796B; color: #fff;
-      padding: .75rem 1.5rem; border-radius: 4px; transition: opacity .3s;
-    }
-    .btn-primary:hover { opacity: .85; }
-    footer { padding: 2rem 1rem; text-align: center; background: #795548; color: #fff; }
-    footer a { color: #ffe680; font-weight: bold; }
+header img {
+  max-height: 80px;
+  margin-bottom: 0.5rem;
+}
 
-    /* Floating chat/call */
-    .float-action {
-      position: fixed; bottom: 20px; right: 20px;
-      display: flex; flex-direction: column; gap: 12px; z-index: 1000;
-      animation: fadeIn .6s ease-out forwards; opacity: 0;
-    }
-    .float-action a {
-      width: 60px; height: 60px;
-      background: #4FC3F7; color: #fff;
-      display:flex; align-items:center; justify-content:center;
-      border-radius:50%; box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-      font-size: 28px;
-    }
-    .float-action a.call { background:#FFD54F; color:#333; }
-    @keyframes fadeIn { from {opacity:0; transform: translateY(20px);} to {opacity:1; transform:none;} }
+header p.moto {
+  margin: 0.25rem 0 1rem;
+  font-style: italic;
+  font-size: 0.95rem;
+}
 
-    /* Dark Mode */
-    body.dark {
-      background: #121212; color: #eee;
-    }
-    body.dark .service-card, body.dark footer, body.dark .modal {
-      background: #1e1e1e; color: #eee;
-    }
-    body.dark .faq-question { background: #455a64; }
-    body.dark .btn-primary { background: #4FC3F7; }
+h1, h2 {
+  margin: 0 0 1rem;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem 1rem;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+.info-box {
+  background: white;
+  border-left: 6px solid var(--accent-blue);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  color: var(--text);
+}
+
+body.dark .info-box {
+  background: var(--card-dark);
+  border-left: 6px solid #80cbc4;
+  color: var(--text-dark);
+}
+
+iframe {
+  width: 100%;
+  height: 1000px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+footer {
+  background: var(--accent-brown);
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+}
+
+footer img {
+  max-height: 60px;
+}
+
+a {
+  color: #ffe680;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.floating-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.floating-buttons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: var(--accent-blue);
+  color: white;
+  border-radius: 50%;
+  font-size: 24px;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: background 0.3s;
+}
+
+.floating-buttons a.call {
+  background: var(--accent-yellow);
+  color: #333;
+}
+
+.floating-buttons a:hover {
+  opacity: 0.85;
+}
+
+.why-solar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.why-card {
+  background: white;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.why-card h3 {
+  margin-top: 0;
+  color: var(--primary);
+}
+
+body.dark .why-card {
+  background: var(--card-dark);
+  color: var(--text-dark);
+}
+
   </style>
 </head>
 <body>
-
-  <!-- Parallax header -->
-  <header>
+  <div class="sun-rays"></div>
+  <div class="ripple-overlay"></div>  <header>
+    <img src="logo.png.jpg" alt="AgriSon Logo" />
+    <p class="moto">Philippians 4:13 – For I can do everything through Christ, who gives me strength.</p>
+    <button class="theme-toggle" onclick="toggleTheme()">🌓 Theme</button>
     <h1>AgriSon Solar Borehole Solutions</h1>
-    <p class="moto">Philippians 4:13 – I can do all things through Him.</p>
-  </header>
-  <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+    <p>Efficient • Reliable • Sustainable</p>
+  </header>  <main>
+    <section>
+      <h2>Welcome</h2>
+      <div class="info-box">
+        AgriSon provides professional solar-powered borehole and water storage systems tailored for agriculture, homes, and community use. We operate across South Africa, offering cost-effective, eco-friendly water solutions.
+      </div>
+    </section><section>
+  <h2>Our Services</h2>
+  <div class="info-box">
+    <strong>✔ Tank & Storage Solutions</strong><br/>
+    We install custom tanks and filtration for farms and homes.
+  </div>
+  <div class="info-box">
+    <strong>✔ Maintenance & Upgrades</strong><br/>
+    Need more water flow or new batteries? We upgrade too!
+  </div>
+</section>
 
-  <main>
-    <section class="services">
-      <div class="service-card">
-        <img src="solar-pump.jpg" alt="Solar borehole pump on a farm">
-        <h3>Solar Borehole Pumps</h3>
-        <p>Reliable off‑grid water access powered by the sun.</p>
-      </div>
-      <div class="service-card">
-        <img src="water-tank.jpg" alt="Water storage tanks installation">
-        <h3>Water Storage Tanks</h3>
-        <p>Durable tanks for homes, farms & community use.</p>
-      </div>
-      <div class="service-card">
-        <img src="solar-lights.jpg" alt="Solar-powered pavilion lighting">
-        <h3>Solar Lighting Solutions</h3>
-        <p>Security and garden lighting using solar technology.</p>
-      </div>
-    </section>
+<section>
+  <h2>Harnessing the Power of the Sun for Sustainable Water Access</h2>
+  <div class="info-box">
+    <p>
+      Solar borehole pumps offer a reliable, cost-effective, and eco-friendly solution for accessing groundwater, especially in off-grid or rural agricultural areas.
+    </p>
+    <p>
+      These systems operate without the need for electricity or fuel, reducing operating costs and ensuring functionality even during power outages or load shedding.
+    </p>
+    <p>
+      Combine them with tanks and pressure pumps for high-demand or low-light days.
+    </p>
+  </div>
+</section>
 
-    <h2>Common Questions</h2>
-    <div class="faq-item">
-      <div class="faq-question">How long does installation take?</div>
-      <div class="faq-answer"><p>Typically 1–2 days depending on system size and location.</p></div>
+<section>
+  <h2>Why Choose Solar?</h2>
+  <div class="why-solar">
+    <div class="why-card">
+      <h3>💸 Save Money</h3>
+      <p>No diesel or electricity bills—solar pays itself off quickly.</p>
     </div>
-    <div class="faq-item">
-      <div class="faq-question">Is it cost‑effective?</div>
-      <div class="faq-answer"><p>Solar systems often pay for themselves within 3–5 years.</p></div>
+    <div class="why-card">
+      <h3>🌍 Eco-Friendly</h3>
+      <p>Zero emissions. Silent operation. Good for the land and air.</p>
     </div>
-
-    <button class="btn-primary" onclick="openModal()">Request a Quote</button>
-  </main>
-
-  <!-- Quote Modal -->
-  <div class="modal-bg" id="modalBg">
-    <div class="modal">
-      <button class="modal-close" onclick="closeModal()">✖</button>
-      <h2>Request a Quote</h2>
-      <p>Please contact 📞 <a href="tel:+27621221998">+27 62 122 1998</a> or email <a href="mailto:AgriSon@zohomail.com">AgriSon@zohomail.com</a>.</p>
+    <div class="why-card">
+      <h3>⚡ Grid Independence</h3>
+      <p>Run water day or night—even during loadshedding or failures.</p>
+    </div>
+    <div class="why-card">
+      <h3>💧 Consistent Pressure</h3>
+      <p>Combined with tanks and pressure pumps for smooth flow.</p>
     </div>
   </div>
+</section>
 
-  <!-- Floating Chat & Call -->
-  <div class="float-action">
-    <a href="tel:+27621221998" class="call" title="☏ Call Us">📞</a>
-    <a href="https://wa.me/27621221998" title="Chat WhatsApp">💬</a>
-  </div>
+<section>
+  <h2>Request a Site Evaluation</h2>
+  <p>Please fill in the form below and our team will contact you for a free site inspection and quote:</p>
+  <iframe src="https://form.jotform.com/251645628248060"></iframe>
+</section>
 
-  <footer>
-    &copy; 2025 AgriSon Solar Solutions | 
-    <a href="/privacy.html">Privacy</a> | 
-    <a href="/terms.html">Terms</a> | 
-    <a href="https://www.facebook.com/profile.php?id=61577414725364" target="_blank">Facebook</a>
-  </footer>
-
-  <!-- Scripts -->
-  <script>
-    // Theme toggle
+  </main>  <footer>
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+      <div>
+        📍 Gauteng • Limpopo • Mpumalanga • North West • Free State<br/>
+        📞 <a href="https://wa.me/27621221998">+27 62 122 1998</a> |
+        📧 <a href="mailto:AgriSon@zohomail.com">AgriSon@zohomail.com</a><br/>
+        🔗 <a href="https://facebook.com/">Facebook Page</a><br/>
+        &copy; 2025 AgriSon Solar Solutions
+      </div>
+      <img src="logo.png.jpg" alt="AgriSon Logo" />
+    </div>
+  </footer>  <div class="floating-buttons">
+    <a href="tel:+27621221998" class="call" title="Call Us">📞</a>
+    <a href="https://wa.me/27621221998" target="_blank" title="Chat on WhatsApp">💬</a>
+  </div>  <script>
     function toggleTheme() {
       document.body.classList.toggle('dark');
-      localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : '');
+      localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
     }
-    if(localStorage.getItem('theme') === 'dark') document.body.classList.add('dark');
 
-    // FAQ accordion
-    document.querySelectorAll('.faq-question').forEach(q => {
-      q.addEventListener('click', () => {
-        const parent = q.parentNode;
-        parent.classList.toggle('open');
-      });
-    });
-
-    // Modal
-    function openModal(){ document.getElementById('modalBg').style.display = 'flex'; }
-    function closeModal(){ document.getElementById('modalBg').style.display = 'none'; }
-
-    // Fade in float buttons
-    window.addEventListener('load', () => {
-      document.querySelector('.float-action').style.opacity = 1;
-    });
-  </script>
-</body>
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark');
+    }
+  </script></body>
 </html>
