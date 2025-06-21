@@ -28,6 +28,48 @@
       transition: background 0.3s, color 0.3s;
     }
 
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url('https://images.unsplash.com/photo-1595347608645-d652d3f3f9ce?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+      opacity: 0.25;
+      z-index: -2;
+    }
+
+    .sun-rays {
+      position: fixed;
+      top: -200px;
+      left: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255,255,224,0.4) 0%, rgba(255,255,224,0) 80%);
+      animation: rotateRays 25s linear infinite;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    @keyframes rotateRays {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .ripple-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: radial-gradient(circle at 50% 50%, rgba(173,216,230,0.1), transparent 70%);
+      animation: rippleEffect 8s ease-in-out infinite alternate;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    @keyframes rippleEffect {
+      0% { transform: scale(1); opacity: 0.2; }
+      100% { transform: scale(1.1); opacity: 0.3; }
+    }
+
     body.dark {
       background: var(--bg-dark);
       color: var(--text-dark);
@@ -181,9 +223,102 @@
       background: var(--card-dark);
       color: var(--text-dark);
     }
+
+    .moon, .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    body.dark .moon, 
+    body.dark .stars {
+      opacity: 1;
+    }
+
+    .moon::before {
+      content: '';
+      position: absolute;
+      top: 60px;
+      right: 60px;
+      width: 80px;
+      height: 80px;
+      background: radial-gradient(circle at 30% 30%, #fefbd8, #f1c40f);
+      border-radius: 50%;
+      box-shadow: 0 0 20px #f1c40f;
+    }
+
+    .stars::before, .stars::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      box-shadow:
+        10vw 10vh white, 30vw 25vh white, 50vw 5vh white, 70vw 20vh white,
+        20vw 60vh white, 80vw 40vh white, 90vw 15vh white, 60vw 70vh white;
+      animation: twinkle 4s infinite ease-in-out alternate;
+    }
+
+    @keyframes twinkle {
+      0% { opacity: 0.2; }
+      100% { opacity: 1; }
+    }
+
+    /* Loader styles */
+    #loader {
+      position: fixed;
+      z-index: 9999;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      transition: opacity 0.6s ease, visibility 0.6s;
+    }
+
+    #loader img {
+      width: 100px;
+      margin-bottom: 1rem;
+      animation: pulse 2s infinite ease-in-out;
+    }
+
+    #loader p {
+      font-size: 1.2rem;
+      color: #00796B;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.05); opacity: 0.7; }
+    }
+
+    #loader.fade-out {
+      opacity: 0;
+      visibility: hidden;
+    }
   </style>
 </head>
 <body>
+
+  <div id="loader">
+    <img src="logo.png.jpg" alt="Loading AgriSon..." />
+    <p>Loading sustainable solutions...</p>
+  </div>
+
+  <div class="sun-rays"></div>
+  <div class="ripple-overlay"></div>
+  <div class="moon"></div>
+  <div class="stars"></div>
 
   <header>
     <img src="logo.png.jpg" alt="AgriSon Logo" />
@@ -203,6 +338,10 @@
 
     <section>
       <h2>Our Services</h2>
+      <div class="info-box">
+        <strong>✔ Solar Systems for Homes & Farms</strong><br/>
+        We supply and install solar energy systems tailored for household and agricultural needs, offering reliable and scalable power independence.
+      </div>
       <div class="info-box">
         <strong>✔ Tank & Storage Solutions</strong><br/>
         We install custom tanks and filtration for farms and homes.
@@ -284,6 +423,11 @@
     if (localStorage.getItem('theme') === 'dark') {
       document.body.classList.add('dark');
     }
+
+    window.addEventListener('load', () => {
+      const loader = document.getElementById('loader');
+      loader.classList.add('fade-out');
+    });
   </script>
 
 </body>
