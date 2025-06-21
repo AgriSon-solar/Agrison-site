@@ -4,148 +4,255 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AgriSon Solar Borehole Solutions</title>
+  <meta name="description" content="AgriSon installs solar borehole systems and tanks across South Africa. Reliable. Sustainable. Efficient."/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary: #00796B;
+      --accent-yellow: #FFD54F;
+      --accent-blue: #4FC3F7;
+      --accent-brown: #795548;
+      --bg: #fffdf9;
+      --text: #212121;
+    }
+
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-image: url('solar-bg.jpg');
+      font-family: 'Inter', sans-serif;
+      background: url('solar-water-bg.jpg') no-repeat center center fixed;
       background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      color: #2196F3; /* blue text */
+      color: var(--text);
+      line-height: 1.6;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: -1;
     }
 
     header {
-      background-color: #006400; /* green background */
-      padding: 1rem;
-      color: #fff;
+      background: linear-gradient(135deg, var(--accent-yellow), var(--primary));
+      color: white;
       text-align: center;
+      padding: 2rem 1rem;
     }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    header img {
+      max-height: 80px;
       margin-bottom: 0.5rem;
     }
 
-    .logo img {
-      height: 40px;
-      margin-right: 0.5rem;
-    }
-
-    .section {
-      background-color: rgba(255, 255, 255, 0.9);
-      margin: 1rem;
-      padding: 1rem;
-      border-radius: 10px;
+    header p.moto {
+      margin: 0.25rem 0 1rem;
+      font-style: italic;
+      font-size: 0.95rem;
     }
 
     h1, h2, h3 {
-      color: #2196F3;
-      margin-bottom: 0.5rem;
+      color: #4FC3F7;
+      font-weight: 700;
+      margin-top: 0;
     }
 
-    p, li {
+    p {
+      color: #212121 !important;
       font-size: 1.1rem;
-      font-weight: bold;
-      color: #2196F3;
-      margin: 0.5rem 0;
+      font-weight: 500;
+      line-height: 1.6;
+      text-shadow: none;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    .info-box {
+      background: rgba(255, 255, 255, 0.97);
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      border-left: 6px solid var(--accent-blue);
+      border-radius: 8px;
+    }
+
+    .why-solar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
     }
 
     .why-card {
-      background-color: white;
-      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.97);
       padding: 1rem;
-      margin-bottom: 1rem;
+      border-radius: 8px;
+    }
+
+    .why-card h3 {
+      color: #4FC3F7;
+    }
+
+    .why-card p {
+      color: #333;
     }
 
     iframe {
       width: 100%;
-      height: 500px;
+      height: 1000px;
       border: none;
-      border-radius: 10px;
+      border-radius: 8px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
     }
 
-    @media (max-width: 600px) {
-      body {
-        font-size: 16px;
-      }
+    footer {
+      background: var(--accent-brown);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+    }
 
-      iframe {
-        height: 600px;
-      }
+    footer img {
+      max-height: 60px;
+    }
+
+    a {
+      color: #ffe680;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .floating-buttons {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .floating-buttons a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background: var(--accent-blue);
+      color: white;
+      border-radius: 50%;
+      font-size: 24px;
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      transition: background 0.3s;
+    }
+
+    .floating-buttons a.call {
+      background: var(--accent-yellow);
+      color: #333;
+    }
+
+    .floating-buttons a:hover {
+      opacity: 0.85;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="logo">
-      <img src="logo.png" alt="AgriSon Logo" />
-      <div>
-        <div style="font-size: 0.8rem;">Philippians 4:13 – For I can do everything through Christ, who gives me strength.</div>
-        <h1>AgriSon Solar Borehole Solutions</h1>
-        <div>Efficient • Reliable • Sustainable</div>
-      </div>
-    </div>
+    <img src="logo.png.jpg" alt="AgriSon Logo" />
+    <p class="moto">Philippians 4:13 – For I can do everything through Christ, who gives me strength.</p>
+    <h1>AgriSon Solar Borehole Solutions</h1>
+    <p>Efficient • Reliable • Sustainable</p>
   </header>
 
-  <section class="section">
-    <h2>Welcome</h2>
-    <p>
-      AgriSon provides professional solar-powered borehole and water storage systems tailored for agriculture, homes, and community use. We operate across South Africa, offering cost-effective, eco-friendly water solutions.
-    </p>
-  </section>
+  <main>
+    <section>
+      <h2>Welcome</h2>
+      <div class="info-box">
+        AgriSon provides professional solar-powered borehole and water storage systems tailored for agriculture, homes, and community use. We operate across South Africa, offering cost-effective, eco-friendly water solutions.
+      </div>
+    </section>
 
-  <section class="section">
-    <h2>Our Services</h2>
-    <p><strong>✔ Tank & Storage Solutions</strong><br/>We install custom tanks and filtration for farms and homes.</p>
-    <p><strong>✔ Maintenance & Upgrades</strong><br/>Need more water flow or new batteries? We upgrade too!</p>
-  </section>
+    <section>
+      <h2>Our Services</h2>
+      <div class="info-box">
+        <strong>✔ Tank & Storage Solutions</strong><br/>
+        We install custom tanks and filtration for farms and homes.
+      </div>
+      <div class="info-box">
+        <strong>✔ Maintenance & Upgrades</strong><br/>
+        Need more water flow or new batteries? We upgrade too!
+      </div>
+    </section>
 
-  <section class="section">
-    <h2>Harnessing the Power of the Sun for Sustainable Water Access</h2>
-    <p>
-      Solar borehole pumps offer a reliable, cost-effective, and eco-friendly solution for accessing groundwater, especially in off-grid or rural agricultural areas.
-    </p>
-    <p>
-      These systems operate without the need for electricity or fuel, reducing operating costs and ensuring functionality even during power outages or load shedding.
-    </p>
-    <p>
-      Combine them with tanks and pressure pumps for high-demand or low-light days.
-    </p>
-  </section>
+    <section>
+      <h2>Harnessing the Power of the Sun for Sustainable Water Access</h2>
+      <div class="info-box">
+        <p>Solar borehole pumps offer a reliable, cost-effective, and eco-friendly solution for accessing groundwater, especially in off-grid or rural agricultural areas.</p>
+        <p>These systems operate without the need for electricity or fuel, reducing operating costs and ensuring functionality even during power outages or load shedding.</p>
+        <p>Combine them with tanks and pressure pumps for high-demand or low-light days.</p>
+      </div>
+    </section>
 
-  <section class="section">
-    <h2>Why Choose Solar?</h2>
+    <section>
+      <h2>Why Choose Solar?</h2>
+      <div class="why-solar">
+        <div class="why-card">
+          <h3>💸 Save Money</h3>
+          <p>No diesel or electricity bills—solar pays itself off quickly.</p>
+        </div>
+        <div class="why-card">
+          <h3>🌍 Eco-Friendly</h3>
+          <p>Zero emissions. Silent operation. Good for the land and air.</p>
+        </div>
+        <div class="why-card">
+          <h3>⚡ Grid Independence</h3>
+          <p>Run water day or night—even during loadshedding or failures.</p>
+        </div>
+        <div class="why-card">
+          <h3>💧 Consistent Pressure</h3>
+          <p>Combined with tanks and pressure pumps for smooth flow.</p>
+        </div>
+      </div>
+    </section>
 
-    <div class="why-card">
-      <h3>💸 Save Money</h3>
-      <p>No diesel or electricity bills—solar pays itself off quickly.</p>
+    <section>
+      <h2>Request a Site Evaluation</h2>
+      <p>Please fill in the form below and our team will contact you for a free site inspection and quote:</p>
+      <iframe src="https://form.jotform.com/251645628248060"></iframe>
+    </section>
+  </main>
+
+  <footer>
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+      <div>
+        📍 Gauteng • Limpopo • Mpumalanga • North West • Free State<br/>
+        📞 <a href="https://wa.me/27621221998">+27 62 122 1998</a> |
+        📧 <a href="mailto:AgriSon@zohomail.com">AgriSon@zohomail.com</a><br/>
+        🔗 <a href="https://facebook.com/profile.php?id=61577414725364">Facebook Page</a><br/>
+        &copy; 2025 AgriSon Solar Solutions
+      </div>
+      <img src="logo.png.jpg" alt="AgriSon Logo" />
     </div>
+  </footer>
 
-    <div class="why-card">
-      <h3>🌍 Eco-Friendly</h3>
-      <p>Zero emissions. Silent operation. Good for the land and air.</p>
-    </div>
-
-    <div class="why-card">
-      <h3>⚡ Grid Independence</h3>
-      <p>Run water day or night—even during loadshedding or failures.</p>
-    </div>
-
-    <div class="why-card">
-      <h3>💧 Consistent Pressure</h3>
-      <p>Combined with tanks and pressure pumps for smooth flow.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2>Request a Site Evaluation</h2>
-    <p>Please fill in the form below and our team will contact you for a free site inspection and quote:</p>
-    <iframe src="https://form.jotform.com/251645628248060"></iframe>
-  </section>
+  <div class="floating-buttons">
+    <a href="tel:+27621221998" class="call" title="Call Us">📞</a>
+    <a href="https://wa.me/27621221998" target="_blank" title="Chat on WhatsApp">💬</a>
+  </div>
 
 </body>
 </html>
