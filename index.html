@@ -34,32 +34,11 @@
       z-index: -1;
     }
 
-    h1, h2, h3 {
-      color: #4FC3F7;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-    }
-
-    p {
-      color: #212121 !important;
-      font-size: 1.1rem;
-      font-weight: 500;
-      line-height: 1.6;
-    }
-
-    .info-box {
-      background: rgba(255, 255, 255, 0.97);
-      backdrop-filter: blur(4px);
-      padding: 1rem;
-      margin-bottom: 1.5rem;
-      border-left: 6px solid var(--accent-blue);
-      border-radius: 8px;
-    }
-
     header {
-      text-align: center;
-      padding: 2rem 1rem;
       background: linear-gradient(135deg, var(--accent-yellow), var(--primary));
       color: white;
+      text-align: center;
+      padding: 2rem 1rem;
     }
 
     header img {
@@ -67,17 +46,24 @@
       margin-bottom: 0.5rem;
     }
 
-    .theme-toggle {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: #333;
-      color: #fff;
-      border: none;
-      padding: 6px 12px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 14px;
+    header p.moto {
+      margin: 0.25rem 0 1rem;
+      font-style: italic;
+      font-size: 0.95rem;
+    }
+
+    h1, h2, h3 {
+      color: #4FC3F7;
+      font-weight: 700;
+      margin-top: 0;
+    }
+
+    p {
+      color: #212121 !important;
+      font-size: 1.1rem;
+      font-weight: 500;
+      line-height: 1.6;
+      text-shadow: none;
     }
 
     main {
@@ -90,6 +76,14 @@
       margin-bottom: 2rem;
     }
 
+    .info-box {
+      background: rgba(255, 255, 255, 0.97);
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      border-left: 6px solid var(--accent-blue);
+      border-radius: 8px;
+    }
+
     .why-solar {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -98,10 +92,25 @@
     }
 
     .why-card {
-      background: white;
+      background: rgba(255, 255, 255, 0.97);
       padding: 1rem;
-      border-radius: 6px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border-radius: 8px;
+    }
+
+    .why-card h3 {
+      color: #4FC3F7;
+    }
+
+    .why-card p {
+      color: #333;
+    }
+
+    iframe {
+      width: 100%;
+      height: 1000px;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
     }
 
     footer {
@@ -123,14 +132,6 @@
 
     a:hover {
       text-decoration: underline;
-    }
-
-    iframe {
-      width: 100%;
-      height: 1000px;
-      border: none;
-      border-radius: 8px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
     }
 
     .floating-buttons {
@@ -172,18 +173,16 @@
 
   <header>
     <img src="logo.png.jpg" alt="AgriSon Logo" />
-    <button class="theme-toggle" onclick="toggleTheme()">🌓 Theme</button>
+    <p class="moto">Philippians 4:13 – For I can do everything through Christ, who gives me strength.</p>
     <h1>AgriSon Solar Borehole Solutions</h1>
-    <p class="moto">Efficient • Reliable • Sustainable</p>
+    <p>Efficient • Reliable • Sustainable</p>
   </header>
 
   <main>
     <section>
       <h2>Welcome</h2>
       <div class="info-box">
-        <p>
-          AgriSon provides professional solar-powered borehole and water storage systems tailored for agriculture, homes, and community use. We operate across South Africa, offering cost-effective, eco-friendly water solutions.
-        </p>
+        AgriSon provides professional solar-powered borehole and water storage systems tailored for agriculture, homes, and community use. We operate across South Africa, offering cost-effective, eco-friendly water solutions.
       </div>
     </section>
 
@@ -191,26 +190,20 @@
       <h2>Our Services</h2>
       <div class="info-box">
         <strong>✔ Tank & Storage Solutions</strong><br/>
-        <p>We install custom tanks and filtration for farms and homes.</p>
+        We install custom tanks and filtration for farms and homes.
       </div>
       <div class="info-box">
         <strong>✔ Maintenance & Upgrades</strong><br/>
-        <p>Need more water flow or new batteries? We upgrade too!</p>
+        Need more water flow or new batteries? We upgrade too!
       </div>
     </section>
 
     <section>
       <h2>Harnessing the Power of the Sun for Sustainable Water Access</h2>
       <div class="info-box">
-        <p>
-          Solar borehole pumps offer a reliable, cost-effective, and eco-friendly solution for accessing groundwater, especially in off-grid or rural agricultural areas.
-        </p>
-        <p>
-          These systems operate without the need for electricity or fuel, reducing operating costs and ensuring functionality even during power outages or load shedding.
-        </p>
-        <p>
-          Combine them with tanks and pressure pumps for high-demand or low-light days.
-        </p>
+        <p>Solar borehole pumps offer a reliable, cost-effective, and eco-friendly solution for accessing groundwater, especially in off-grid or rural agricultural areas.</p>
+        <p>These systems operate without the need for electricity or fuel, reducing operating costs and ensuring functionality even during power outages or load shedding.</p>
+        <p>Combine them with tanks and pressure pumps for high-demand or low-light days.</p>
       </div>
     </section>
 
@@ -238,10 +231,8 @@
 
     <section>
       <h2>Request a Site Evaluation</h2>
-      <div class="info-box">
-        <p>Please fill in the form below and our team will contact you for a free site inspection and quote:</p>
-        <iframe src="https://form.jotform.com/251645628248060"></iframe>
-      </div>
+      <p>Please fill in the form below and our team will contact you for a free site inspection and quote:</p>
+      <iframe src="https://form.jotform.com/251645628248060"></iframe>
     </section>
   </main>
 
@@ -251,7 +242,7 @@
         📍 Gauteng • Limpopo • Mpumalanga • North West • Free State<br/>
         📞 <a href="https://wa.me/27621221998">+27 62 122 1998</a> |
         📧 <a href="mailto:AgriSon@zohomail.com">AgriSon@zohomail.com</a><br/>
-        🔗 <a href="https://www.facebook.com/profile.php?id=61577414725364">Facebook Page</a><br/>
+        🔗 <a href="https://facebook.com/profile.php?id=61577414725364">Facebook Page</a><br/>
         &copy; 2025 AgriSon Solar Solutions
       </div>
       <img src="logo.png.jpg" alt="AgriSon Logo" />
@@ -262,17 +253,6 @@
     <a href="tel:+27621221998" class="call" title="Call Us">📞</a>
     <a href="https://wa.me/27621221998" target="_blank" title="Chat on WhatsApp">💬</a>
   </div>
-
-  <script>
-    function toggleTheme() {
-      document.body.classList.toggle('dark');
-      localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
-    }
-
-    if (localStorage.getItem('theme') === 'dark') {
-      document.body.classList.add('dark');
-    }
-  </script>
 
 </body>
 </html>
