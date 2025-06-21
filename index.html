@@ -4,152 +4,104 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AgriSon Solar Borehole Solutions</title>
-  <meta name="description" content="AgriSon installs solar borehole systems and tanks across South Africa. Reliable. Sustainable. Efficient."/>
+  <meta name="description" content="AgriSon installs solar borehole systems and tanks across South Africa. Reliable. Sustainable. Efficient.">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary: #00796B;
-      --accent-yellow: #FFD54F;
       --accent-blue: #2196F3;
-      --accent-brown: #795548;
-      --bg: #fffdf9;
-      --text: #2e2b29;
-      --text-highlight: #2196F3;
+      --accent-yellow: #FFD54F;
+      --bg-image-opacity: rgba(255,255,255,0.95);
     }
+
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
       background: url('solar-water-bg.jpg') no-repeat center center fixed;
       background-size: cover;
-      color: var(--text);
+      color: var(--accent-blue);
       line-height: 1.6;
     }
 
+    /* Header */
     header {
-      background: rgba(0,0,0,0.6);
-      color: white;
+      background: var(--primary);
+      color: black;
       text-align: center;
       padding: 2rem 1rem;
     }
-
-    header img {
-      max-height: 80px;
-      margin-bottom: 0.5rem;
+    header img { max-height: 80px; margin-bottom: 0.5rem; }
+    header p.moto, header h1 {
+      margin: 0.25rem 0;
     }
 
-    header p.moto {
-      margin: 0.25rem 0 1rem;
-      font-style: italic;
-      font-size: 0.95rem;
-    }
+    /* Headings & Text */
+    h1, h2, h3 { color: var(--accent-blue); font-weight: 700; margin: 1rem 0; }
+    p { color: var(--accent-blue); font-weight: bold; margin: 0.5rem 0; }
 
-    h1, h2 {
-      margin: 0 0 1rem;
-      color: var(--accent-blue);
-    }
+    main { max-width: 900px; margin: auto; padding: 2rem 1rem; }
 
-    h2, h3, p {
-      color: var(--accent-blue);
-      font-weight: bold;
-    }
+    section { margin-bottom: 2rem; }
 
-    main {
-      max-width: 900px;
-      margin: auto;
-      padding: 2rem 1rem;
-    }
-
-    section {
-      margin-bottom: 2rem;
-    }
-
-    .info-box {
-      background: rgba(255,255,255,0.95);
-      border-left: 6px solid var(--accent-blue);
+    .info-box, .why-card {
+      background: var(--bg-image-opacity);
       padding: 1rem;
       margin-bottom: 1rem;
+      border-left: 6px solid var(--accent-blue);
       border-radius: 6px;
     }
 
     iframe {
       width: 100%;
-      height: 1000px;
+      height: 800px;
       border: none;
       border-radius: 8px;
       box-shadow: 0 4px 16px rgba(0,0,0,0.1);
     }
 
     footer {
-      background: var(--accent-brown);
-      color: white;
+      background: var(--accent-yellow);
+      color: black;
       text-align: center;
       padding: 1.5rem;
       font-size: 0.9rem;
     }
 
-    footer a {
-      color: #ffe680;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
     .floating-buttons {
       position: fixed;
-      bottom: 20px;
       right: 20px;
-      z-index: 1000;
+      bottom: 20px;
       display: flex;
       flex-direction: column;
       gap: 10px;
     }
-
     .floating-buttons a {
-      display: flex;
-      align-items: center;
+      display: inline-flex;
+      width: 50px; height: 50px;
       justify-content: center;
-      width: 50px;
-      height: 50px;
+      align-items: center;
       background: var(--accent-blue);
       color: white;
-      border-radius: 50%;
       font-size: 24px;
+      border-radius: 50%;
       text-decoration: none;
     }
+    .floating-buttons a.call { background: var(--accent-yellow); color: black; }
 
-    .floating-buttons a.call {
-      background: var(--accent-yellow);
-      color: #333;
-    }
-
-    .why-solar {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1rem;
-    }
-
-    .why-card {
-      background: rgba(255,255,255,0.95);
-      padding: 1rem;
-      border-radius: 6px;
-    }
-
-    .why-card h3 {
-      margin-top: 0;
-      color: var(--accent-blue);
+    /* Mobile adjustments */
+    @media (max-width: 600px) {
+      iframe { height: 600px; }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="logo.png.jpg" alt="AgriSon Logo" />
-    <p class="moto">Philippians 4:13 – For I can do everything through Christ, who gives me strength.</p>
+    <img src="logo.png.jpg" alt="AgriSon Logo">
     <h1>AgriSon Solar Borehole Solutions</h1>
+    <p class="moto">Philippians 4:13 – For I can do everything through Christ, who gives me strength.</p>
     <p>Efficient • Reliable • Sustainable</p>
   </header>
 
@@ -163,14 +115,8 @@
 
     <section>
       <h2>Our Services</h2>
-      <div class="info-box">
-        ✔ <strong>Tank & Storage Solutions</strong><br/>
-        We install custom tanks and filtration for farms and homes.
-      </div>
-      <div class="info-box">
-        ✔ <strong>Maintenance & Upgrades</strong><br/>
-        Need more water flow or new batteries? We upgrade too!
-      </div>
+      <div class="info-box">✔ <strong>Tank & Storage Solutions</strong><br>We install custom tanks and filtration for farms and homes.</div>
+      <div class="info-box">✔ <strong>Maintenance & Upgrades</strong><br>Need more water flow or new batteries? We upgrade too!</div>
     </section>
 
     <section>
@@ -185,22 +131,10 @@
     <section>
       <h2>Why Choose Solar?</h2>
       <div class="why-solar">
-        <div class="why-card">
-          <h3>💸 Save Money</h3>
-          <p>No diesel or electricity bills—solar pays itself off quickly.</p>
-        </div>
-        <div class="why-card">
-          <h3>🌍 Eco-Friendly</h3>
-          <p>Zero emissions. Silent operation. Good for the land and air.</p>
-        </div>
-        <div class="why-card">
-          <h3>⚡ Grid Independence</h3>
-          <p>Run water day or night—even during loadshedding or failures.</p>
-        </div>
-        <div class="why-card">
-          <h3>💧 Consistent Pressure</h3>
-          <p>Combined with tanks and pressure pumps for smooth flow.</p>
-        </div>
+        <div class="why-card"><h3>💸 Save Money</h3><p>No diesel or electricity bills—they pay themselves off quickly.</p></div>
+        <div class="why-card"><h3>🌍 Eco‑Friendly</h3><p>Zero emissions. Silent operation. Good for the land and air.</p></div>
+        <div class="why-card"><h3>⚡ Grid Independence</h3><p>Run water day or night—even during load shedding or failures.</p></div>
+        <div class="why-card"><h3>💧 Consistent Pressure</h3><p>Combined with tanks and pressure pumps for smooth flow.</p></div>
       </div>
     </section>
 
@@ -211,23 +145,17 @@
     </section>
   </main>
 
-  <footer>
-    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-      <div>
-        📍 Gauteng • Limpopo • Mpumalanga • North West • Free State<br/>
-        📞 <a href="https://wa.me/27621221998">+27 62 122 1998</a> |
-        📧 <a href="mailto:AgriSon@zohomail.com">AgriSon@zohomail.com</a><br/>
-        🔗 <a href="https://facebook.com/profile.php?id=61577414725364">Facebook Page</a><br/>
-        &copy; 2025 AgriSon Solar Solutions
-      </div>
-      <img src="logo.png.jpg" alt="AgriSon Logo" />
-    </div>
-  </footer>
-
   <div class="floating-buttons">
     <a href="tel:+27621221998" class="call" title="Call Us">📞</a>
-    <a href="https://wa.me/27621221998" target="_blank" title="Chat on WhatsApp">💬</a>
+    <a href="https://wa.me/27621221998" title="Chat on WhatsApp">💬</a>
   </div>
+
+  <footer>
+    <p>📍 Gauteng • Limpopo • Mpumalanga • North West • Free State</p>
+    <p>📞 <a href="https://wa.me/27621221998">+27 62 122 1998</a> | 📧 <a href="mailto:AgriSon@zohomail.com">AgriSon@zohomail.com</a></p>
+    <p><a href="https://www.facebook.com/profile.php?id=61577414725364">Facebook Page</a></p>
+    <p>&copy; 2025 AgriSon Solar Solutions</p>
+  </footer>
 
 </body>
 </html>
