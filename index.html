@@ -50,42 +50,10 @@
       font-size: 1.1rem;
     }
 
-    .sun-rays {
-      position: fixed;
-      top: -150px;
-      left: -150px;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(255,255,224,0.4) 0%, transparent 80%);
-      animation: rotateRays 25s linear infinite;
-      z-index: -2;
-      pointer-events: none;
-    }
-    @keyframes rotateRays {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    .ripple-overlay {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: radial-gradient(circle at 50% 50%, rgba(173,216,230,0.1), transparent 70%);
-      animation: rippleEffect 8s ease-in-out infinite alternate;
-      z-index: -1;
-      pointer-events: none;
-    }
-    @keyframes rippleEffect {
-      0% { transform: scale(1); opacity: 0.2; }
-      100% { transform: scale(1.1); opacity: 0.3; }
-    }
-
     header {
-      color: #ffffff;
-      background: transparent;
       text-align: center;
       padding: 2rem 1rem;
-      position: relative;
+      background: transparent;
     }
 
     header img {
@@ -97,7 +65,7 @@
       margin: 0.25rem 0 1rem;
       font-style: italic;
       font-size: 0.95rem;
-      color: #FFF;
+      color: #fff;
     }
 
     .theme-toggle {
@@ -125,13 +93,11 @@
 
     .info-box {
       background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(3px);
       border-left: 6px solid var(--accent-blue);
       padding: 1rem;
       margin-bottom: 1rem;
       border-radius: 6px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      color: var(--text);
     }
 
     iframe {
@@ -218,8 +184,6 @@
   </style>
 </head>
 <body>
-  <div class="sun-rays"></div>
-  <div class="ripple-overlay"></div>
 
   <header>
     <img src="logo.png.jpg" alt="AgriSon Logo" />
@@ -233,19 +197,19 @@
     <section>
       <h2>Welcome</h2>
       <div class="info-box">
-        AgriSon provides professional solar-powered borehole and water storage systems tailored for agriculture, homes, and community use. We operate across South Africa, offering cost-effective, eco-friendly water solutions.
+        <p>AgriSon provides professional solar-powered borehole and water storage systems tailored for agriculture, homes, and community use. We operate across South Africa, offering cost-effective, eco-friendly water solutions.</p>
       </div>
     </section>
 
     <section>
       <h2>Our Services</h2>
       <div class="info-box">
-        <strong>✔ Tank & Storage Solutions</strong><br/>
-        We install custom tanks and filtration for farms and homes.
+        <strong>✔ Tank & Storage Solutions</strong>
+        <p>We install custom tanks and filtration for farms and homes.</p>
       </div>
       <div class="info-box">
-        <strong>✔ Maintenance & Upgrades</strong><br/>
-        Need more water flow or new batteries? We upgrade too!
+        <strong>✔ Maintenance & Upgrades</strong>
+        <p>Need more water flow or new batteries? We upgrade too!</p>
       </div>
     </section>
 
@@ -282,8 +246,10 @@
 
     <section>
       <h2>Request a Site Evaluation</h2>
-      <p>Please fill in the form below and our team will contact you for a free site inspection and quote:</p>
-      <iframe src="https://form.jotform.com/251645628248060"></iframe>
+      <div class="info-box">
+        <p>Please fill in the form below and our team will contact you for a free site inspection and quote:</p>
+        <iframe src="https://form.jotform.com/251645628248060"></iframe>
+      </div>
     </section>
   </main>
 
@@ -293,7 +259,7 @@
         📍 Gauteng • Limpopo • Mpumalanga • North West • Free State<br/>
         📞 <a href="https://wa.me/27621221998">+27 62 122 1998</a> |
         📧 <a href="mailto:AgriSon@zohomail.com">AgriSon@zohomail.com</a><br/>
-        🔗 <a href="https://www.facebook.com/profile.php?id=61577414725364">Facebook Page</a><br/>
+        🔗 <a href="https://facebook.com/">Facebook Page</a><br/>
         &copy; 2025 AgriSon Solar Solutions
       </div>
       <img src="logo.png.jpg" alt="AgriSon Logo" />
